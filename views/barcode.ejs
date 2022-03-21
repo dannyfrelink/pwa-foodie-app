@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('layout/head'); %>
+</head>
+
+<body>
+    <main>
+        <div id="error_popup">
+            <div id="close_popup"></div>
+            <article id="error_state">
+                <h3>Sorry, can't find this barcode.</h3>
+                <p>Try typing in the barcode number in the searchbar below:</p>
+                <form action="#">
+                    <input type="text">
+                    <input type="button" value="Search code">
+                </form>
+                <p id="invalid_code" class="hidden">Invalid barcode</p>
+            </article>
+        </div>
+    </main>
+</body>
+
+</html>
