@@ -1,0 +1,219 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+}
+
+.overflow_visible {
+    overflow-y: auto;
+}
+
+body {
+    background-color: #161623;
+    color: white;
+    height: 100vh;
+    position: relative;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    height: 100vh;
+    width: 90vw;
+}
+
+header p {
+    font-size: 150%;
+    font-style: italic;
+    margin-top: 1.5em;
+}
+
+main>section {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+}
+
+main>section.infaden {
+    display: block;
+    animation-name: infaden;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes infaden {
+    from {
+        top: -100vh;
+    }
+    to {
+        top: 0;
+    }
+}
+
+h1 {
+    font-size: 70px;
+}
+
+.scan_button {
+    display: flex;
+    align-items: center;
+    background-color: #8D8DE0;
+    color: white;
+    font-size: 1.3em;
+    border: 2px solid white;
+    border-radius: 0.8em;
+    margin: 2.084em auto;
+    padding: 0.35em 0.55em;
+}
+
+.scan_button img {
+    width: 2em;
+    margin-right: 0.3em;
+}
+
+#start_scan {
+    font-size: 1.5em;
+    border: 3px solid white;
+    border-radius: 1em;
+    margin: 2.5em auto 0;
+    padding: 0.65em 0.75em;
+}
+
+/* Barcode scanner part */
+nav {
+    height: 3.127em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8D8DE0;
+    border-bottom: 3px solid white;
+}
+
+#close_button {
+    position: absolute;
+    right: 5vw;
+    background: none;
+    border: none;
+    font-size: 3em;
+    z-index: 1;
+}
+
+#close_button::after {
+    content: "\00d7";
+    color: white;
+}
+
+video {
+    display: block;
+    height: calc(100vh - 3.127em - 3px);
+}
+
+.hidden {
+    display: none;
+}
+
+#loader {
+    position: absolute;
+    left: calc(50vw - 2.34em / 2);
+    top: calc(50vh - 2.34em / 2);
+    border: 0.5em solid white;
+    border-top: 0.5em solid #8D8DE0;
+    border-radius: 50%;
+    width: 2.34em;
+    height: 2.34em;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Product info part */
+#product_info {
+    width: 90vw;
+    height: fit-content;
+    margin: 3.127em auto;
+}
+
+#product_info>*~* {
+    margin-top: 1.042em;
+}
+
+#product_info h2,
+#product_info p,
+#product_info ul {
+    width: 85%;
+}
+
+#product_info>img {
+    width: 90vw;
+}
+
+#product_info p {
+    font-style: italic;
+}
+
+#product_info ul {
+    text-align: left;
+    list-style-position: inside;
+}
+
+#product_info ul li {
+    margin-top: 0.15em;
+}
+
+/* Error state part */
+#close_popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ' ';
+    background: rgba(0,0,0,.5);
+    z-index: 1;
+}
+
+#error_state {
+    position: absolute;
+    left: calc(50vw - 18.75em / 2);
+    top: calc(50vh - 11.25em / 2);
+    background-color: white;
+    color: #161623;
+    width: 18.75em;
+    height: fit-content;
+    z-index: 1;
+}
+
+#error_state>* {
+    width: 80%;
+    margin: 1em auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="button"] {
+    width: fit-content;
+    background-color: #8D8DE0;
+    color: #161623;
+    border: 1.5px solid #161623;
+    border-radius: 0.4em;
+    margin-top: 0.5em;
+    padding: 0.3em;
+}
+
+#invalid_code {
+    color: red;
+}
