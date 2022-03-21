@@ -3,6 +3,7 @@ const app = express();
 const port = 5555;
 
 app.use(express.static(`static/public`));
+app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
     res.send('Hello World!');
