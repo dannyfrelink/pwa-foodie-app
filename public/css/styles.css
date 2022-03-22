@@ -169,18 +169,7 @@ video {
 }
 
 /* Error state part */
-#close_popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    content: ' ';
-    background: rgba(0,0,0,.5);
-    z-index: 1;
-}
-
-#error_state {
+#barcode_search {
     position: absolute;
     left: calc(50vw - 18.75em / 2);
     top: calc(50vh - 11.25em / 2);
@@ -191,9 +180,22 @@ video {
     z-index: 1;
 }
 
-#error_state>* {
+#barcode_search>* {
     width: 80%;
     margin: 1em auto;
+}
+
+#close_barcode_search {
+    margin: 0;
+}
+
+#close_barcode_search::after {
+    content: '\00d7';
+    font-size: 240%;
+    opacity: 0.7;
+    position: absolute;
+    right: 0.7rem;
+    color: black;
 }
 
 form {

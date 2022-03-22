@@ -7,18 +7,16 @@
 
 <body>
     <main>
-        <div id="error_popup">
-            <div id="close_popup"></div>
-            <article id="error_state">
-                <h3>Search for a barcode</h3>
-                <p>Try typing in the barcode number in the searchbar below:</p>
-                <form method="GET" action="/product">
-                    <input type="text" name="query">
-                    <input type="submit" value="Search code">
-                </form>
-                <p id="invalid_code" class="hidden">Invalid barcode</p>
-            </article>
-        </div>
+        <article id="barcode_search">
+            <a href="/" id="close_barcode_search"></a>
+            <h3>Search for a barcode</h3>
+            <p>Try typing in the barcode number in the searchbar below:</p>
+            <form method="GET" action="/product">
+                <input type="text" name="query">
+                <input type="submit" value="Search code">
+            </form>
+            <p id="invalid_code" class="hidden">Invalid barcode</p>
+        </article>
     </main>
 </body>
 
