@@ -3,15 +3,6 @@
     margin: 0;
 }
 
-html,
-body {
-    overflow: hidden;
-}
-
-.overflow_visible {
-    overflow-y: auto;
-}
-
 body {
     background-color: #161623;
     color: white;
