@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const express = require('express');
 const app = express();
 const port = 5555;
@@ -11,6 +12,14 @@ app.get('/', async (req, res) => {
 
 app.get('/barcode', async (req, res) => {
     res.render('barcode');
+});
+
+app.get('/product', async (req, res) => {
+    fetch(`https://world.openfoodfacts.org/api/v0/product/3366321051983.json`)
+        .then(res => res.json())
+        .then(data => {
+            res.render('product', { data });
+        })
 });
 
 app.use((req, res) => {
