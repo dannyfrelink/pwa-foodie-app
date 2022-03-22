@@ -6,11 +6,11 @@ const port = 5555;
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/barcode', async (req, res) => {
+app.get('/barcode', (req, res) => {
     res.render('barcode');
 });
 
@@ -18,7 +18,6 @@ app.get('/product', async (req, res) => {
     await fetch(`https://world.openfoodfacts.org/api/v0/product/${req.query.query}.json`)
         .then(res => res.json())
         .then(data => {
-            console.log(data.product.ingredients_text_en.split(', '))
             if (data.status == 1) {
                 res.render('product', { product: data.product });
             }
