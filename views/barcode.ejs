@@ -12,8 +12,8 @@
             <article id="error_state">
                 <h3>Search for a barcode</h3>
                 <p>Try typing in the barcode number in the searchbar below:</p>
-                <form action="#">
-                    <input type="text">
+                <form method="GET" action="/product">
+                    <input type="text" name="query">
                     <input type="button" value="Search code">
                 </form>
                 <p id="invalid_code" class="hidden">Invalid barcode</p>
