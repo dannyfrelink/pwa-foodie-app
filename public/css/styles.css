@@ -209,7 +209,7 @@ form {
     flex-direction: column;
 }
 
-input[type="button"] {
+input[type="submit"] {
     width: fit-content;
     background-color: #8D8DE0;
     color: #161623;

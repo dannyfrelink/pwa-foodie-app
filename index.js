@@ -15,10 +15,16 @@ app.get('/barcode', async (req, res) => {
 });
 
 app.get('/product', async (req, res) => {
-    fetch(`https://world.openfoodfacts.org/api/v0/product/3366321051983.json`)
+    await fetch(`https://world.openfoodfacts.org/api/v0/product/${req.query.query}.json`)
         .then(res => res.json())
         .then(data => {
-            res.render('product', { data });
+            if (data.status == 1) {
+                res.render('product', { product: data.product });
+            }
+            else {
+                res.redirect('/barcode')
+            }
+
         })
 });
 
