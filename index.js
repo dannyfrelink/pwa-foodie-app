@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const port = 5555;
 
-app.use(express.static('public'));
+app.use(express.static('src'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
