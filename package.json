@@ -6,9 +6,13 @@
   "scripts": {
     "start": "nodemon index.js",
     "build": "npm-run-all build:*",
-    "build:css": "node src/scripts/build-css.js",
+    "build:css": "node build_scripts/build-css.js",
+    "build:js": "node build_scripts/build-js.js",
+    "build:images": "node build_scripts/build-images.js",
     "watch": "run-p watch:*",
     "watch:css": "chokidar 'src/css/*.css' --command 'npm run build:css'",
+    "watch:js": "chokidar 'src/js/*.js' --command 'npm run build:js'",
+    "watch:images": "chokidar 'src/images/*.*' --command 'npm run build:images'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
