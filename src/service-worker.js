@@ -23,7 +23,7 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    if(event.request.method === 'GET' && (event.request.headers.get('accept') !== null && event.request.headers.get('accept').includes('text/html'))) {
+    if (isHtmlGetRequest(event.request)) {
         event.respondWith(
             fetch(event.request)
                 .catch(e => {
@@ -31,15 +31,26 @@ self.addEventListener('fetch', (event) => {
                         .then(cache => cache.match('/offline'))
                 })
         )   
-        console.log('fetching')
     }
+    else if (isCoreGetRequest(event.request)) {
+        event.respondWith(
+            caches.open(CACHE)
+                .then(cache => cache.match(event.request.url))
+        )
+    }
+
+    console.log('fetching')
 });
 
-function isCoreGetRequest(request) {
-    return request.method === 'GET' && CORE_ASSETS.includes(getPathName(request.url));
+const isHtmlGetRequest = request => {
+    return request.method === 'GET' && (request.headers.get('accept') !== null && request.headers.get('accept').includes('text/html'))
 }
 
-function getPathName(requestUrl) {
+const isCoreGetRequest = request => {
+    return request.method === 'GET' && CACHE_FILES.includes(getPathName(request.url));
+}
+
+const getPathName = requestUrl => {
     const url = new URL(requestUrl);
     return url.pathname;
 }
