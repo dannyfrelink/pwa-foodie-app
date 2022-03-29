@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 
 return gulp.src([
-    'images/*.*'
+    './src/images/*.*'
 ])
-    .pipe(gulp.dest('./static/'));
+    .pipe(gulp.dest('./static/images'));
