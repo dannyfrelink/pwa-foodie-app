@@ -1,14 +1,18 @@
 const CORE = 'core-cache';
 const CORE_FILES = [
-    '/css/styles.css',
-    'js/app.js'
+    '/index.css',
+    '/index.js',
+    '/offline'
 ]
 
 self.addEventListener('install', function (event) {
-    event.waitUntil(
-        caches.open(CORE).then(function (cache) {
-            return cache.addAll(CORE_FILES);
-        })
-    )
-    console.log("[serviceWorker] is installed");
-})
+    console.log('installing')
+});
+
+self.addEventListener('activate', function (event) {
+    console.log('activating')
+});
+
+self.addEventListener('fetch', function (event) {
+    console.log('fetching')
+});
