@@ -76,7 +76,8 @@ a {
     margin-right: 0.3em;
 }
 
-#start_scan {
+#start_scan,
+#refresh {
     font-size: 1.5em;
     border: 3px solid white;
     border-radius: 1em;
