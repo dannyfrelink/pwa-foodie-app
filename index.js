@@ -6,11 +6,11 @@ const port = 5555;
 app.use(express.static('static'));
 app.set('view engine', 'ejs');
 
-app.get('/', res => {
+app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/barcode', res => {
+app.get('/barcode', (req, res) => {
     res.render('barcode');
 });
 
@@ -31,7 +31,7 @@ app.get('/offline', (req, res) => {
     res.render('offline')
 })
 
-app.use(res => {
+app.use((req, res) => {
     res.status(404).send('Sorry, deze pagina kon ik niet vinden.');
 });
 
