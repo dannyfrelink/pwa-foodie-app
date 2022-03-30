@@ -14,13 +14,11 @@ self.addEventListener('install', (event) => {
                     .then(() => self.skipWaiting());
             })
     );
-
-    console.log('installing')
 });
 
-self.addEventListener('activate', (event) => {
-    console.log('activating')
-});
+// self.addEventListener('activate', (event) => {
+//     console.log('activating')
+// });
 
 self.addEventListener('fetch', (event) => {
     if (isHtmlGetRequest(event.request)) {
@@ -38,8 +36,6 @@ self.addEventListener('fetch', (event) => {
                 .then(cache => cache.match(event.request.url))
         )
     }
-
-    console.log('fetching')
 });
 
 const isHtmlGetRequest = request => {
