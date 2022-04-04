@@ -11,7 +11,7 @@
     "build:assets": "node build_scripts/build-assets.js",
     "watch": "run-p watch:*",
     "watch:css": "chokidar 'src/css/*.css' --command 'npm run build:css'",
-    "watch:js": "chokidar 'src/js/*.js' --command 'npm run build:js'",
+    "watch:js": "chokidar 'src/js/**/*.js' --command 'npm run build:js'",
     "watch:assets": "chokidar 'src/**/*.*' --command 'npm run build:assets'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

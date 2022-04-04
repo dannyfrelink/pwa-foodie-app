@@ -14,6 +14,10 @@ app.get('/barcode', (req, res) => {
     res.render('barcode');
 });
 
+app.get('/search', (req, res) => {
+    res.render('search');
+});
+
 app.get('/product', async (req, res) => {
     await fetch(`https://world.openfoodfacts.org/api/v0/product/${req.query.query}.json`)
         .then(res => res.json())
@@ -22,7 +26,21 @@ app.get('/product', async (req, res) => {
                 res.render('product', { product: data.product });
             }
             else {
-                res.redirect('/barcode')
+                res.redirect('/search');
+            }
+        })
+});
+
+app.get('/product/:barcode', async (req, res) => {
+    const barcode = req.params.barcode
+    await fetch(`https://world.openfoodfacts.org/api/v0/product/${barcode}.json`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.status == 1) {
+                res.render('product', { product: data.product });
+            }
+            else {
+                res.redirect('/search');
             }
         })
 });
