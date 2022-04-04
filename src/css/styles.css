@@ -6,11 +6,11 @@
 body {
     background-color: #161623;
     color: white;
-    height: 100vh;
     position: relative;
 }
 
 .overflow_hidden {
+    height: 100vh;
     overflow: hidden;
 }
 
