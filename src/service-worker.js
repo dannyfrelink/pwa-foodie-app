@@ -17,12 +17,8 @@ self.addEventListener('install', (event) => {
     );
 });
 
-// self.addEventListener('activate', (event) => {
-//     console.log('activating')
-// });
-
 self.addEventListener('fetch', (event) => {
-    if (isHtmlGetRequest(event.request) && !isBarcodePage(event.request)) {
+    if (isHtmlGetRequest(event.request) && !isBarcodeOrSearchPage(event.request)) {
         event.respondWith(
           caches.open(HTML_CACHE)
             .then(cache => cache.match(event.request.url))
@@ -54,8 +50,8 @@ const fetchAndCache = (request) => {
         })
 }
 
-const isBarcodePage = (request) => {
-    return getPathName(request.url) == '/barcode'
+const isBarcodeOrSearchPage = (request) => {
+    return getPathName(request.url) === '/barcode' || getPathName(request.url) === '/search'
 }
 
 const isHtmlGetRequest = request => {
