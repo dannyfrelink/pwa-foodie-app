@@ -1,7 +1,6 @@
 const CACHE = 'v1';
 const HTML_CACHE = 'v1_html';
 const CACHE_FILES = [
-    // '/invalid',
     '/offline',
     '/index.css',
     '/index.js',
@@ -18,16 +17,27 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    if (isHtmlGetRequest(event.request) && !isBarcodeOrSearchPage(event.request)) {
-        event.respondWith(
-          caches.open(HTML_CACHE)
-            .then(cache => cache.match(event.request.url))
-            .then(response => response ? response : fetchAndCache(event.request))
-            .catch(e => {
-                return caches.open(CACHE)
-                    .then(cache => cache.match('/offline'))
-            })
-        )
+    if (isHtmlGetRequest(event.request)) {
+        if(!isBarcodeOrSearchPage(event.request)) {
+            event.respondWith(
+                caches.open(HTML_CACHE)
+                  .then(cache => cache.match(event.request.url))
+                  .then(response => response ? response : fetchAndCache(event.request))
+                  .catch(e => {
+                      return caches.open(CACHE)
+                          .then(cache => cache.match('/offline'))
+                  })
+              )
+        }
+        else {
+            event.respondWith(
+                fetch(event.request)
+                    .catch(e => {
+                        return caches.open(CACHE)
+                            .then(cache => cache.match('/offline'))
+                    })
+            )
+        }
     }
     else if (isCoreGetRequest(event.request)) {
         event.respondWith(
