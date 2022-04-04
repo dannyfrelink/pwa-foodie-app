@@ -15,7 +15,15 @@ For this project, I was meant to recreate my previously made website into a serv
 
 This time, I was able to work with server side routing, so there were lots of thing to refactor. I tried to keep the layout of my application as much the same as possible. I also created an offline page with Service Workers to display if you're browsing my website offline.
 
-////////////////// Images & Activity Diagram /////////////////
+Landing page               |  Scanner page             | Product page
+:-------------------------:|:-------------------------:|:-------------------------:
+![Landing page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/home.png)  |  ![Scanner page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/scanner.png)  |  ![Product page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/product.png)
+
+Error/Search page          |  Offline page             
+:-------------------------:|:-------------------------:
+![Error/Search page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/search.png)  |  ![Offline page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/offline.png)
+
+////////////////// Activity Diagram /////////////////
 
 ## 📝 Wishlist
 
