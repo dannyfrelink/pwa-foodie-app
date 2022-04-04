@@ -21,7 +21,7 @@ Landing page               |  Scanner page             | Product page
 
 Error/Search page          |  Offline page             
 :-------------------------:|:-------------------------:
-![Error/Search page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/search.png)  |  ![Offline page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/offline.png)
+![Error/Search page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/search2.png)  |  ![Offline page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/offline.png)
 
 ////////////////// Activity Diagram /////////////////
 
