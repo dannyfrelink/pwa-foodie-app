@@ -89,6 +89,10 @@ a {
     padding: 0.65em 0.75em;
 }
 
+#start_scan+#start_scan {
+    margin-top: 1em;
+}
+
 /* Barcode scanner part */
 nav {
     height: 3.127em;
