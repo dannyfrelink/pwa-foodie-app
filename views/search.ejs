@@ -10,9 +10,9 @@
     <article id="barcode_search">
         <a href="/barcode" id="close_barcode_search"></a>
         <h3>Sorry, can't find this barcode.</h3>
-        <p>Try typing in the barcode number in the searchbar below:</p>
         <form method="GET" action="/product">
-            <input type="text" name="query">
+            <label for="search">Try typing in the barcode number in the searchbar below:</label>
+            <input id="search" type="text" name="query">
             <input type="submit" value="Search code">
         </form>
         <p id="invalid_code" class="hidden">Invalid barcode</p>
