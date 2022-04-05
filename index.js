@@ -8,6 +8,11 @@ app.use(compression());
 app.use(express.static('static'));
 app.set('view engine', 'ejs');
 
+app.use(/.*-[0-9a-f]{10}\..*/, (req, res, next) => {
+    res.setHeader('Cache-Control', 'max-age=31536000, immutable');
+    next();
+});
+
 app.get('/', (req, res) => {
     res.render('home');
 });
