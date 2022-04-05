@@ -9,5 +9,3 @@ const loader = document.querySelector('#loader');
 
 // Error state part
 const invalidBarcode = document.querySelector('#invalid_code');
-
-export { html, body, barcodeSection, video, videoDiv, loader, invalidBarcode }

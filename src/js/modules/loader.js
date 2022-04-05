@@ -1,9 +1,7 @@
-import { loader } from "./variables.js";
-
-export const startLoader = () => {
+const startLoader = () => {
     loader.classList.remove('hidden');
 }
 
-export const stopLoader = () => {
+const stopLoader = () => {
     loader.classList.add('hidden');
 }

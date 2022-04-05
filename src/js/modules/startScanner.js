@@ -1,9 +1,4 @@
-import { barcodeSection, video, videoDiv } from './variables.js';
-import { showBarcodeSection } from './showSection.js';
-import { stopLoader } from './loader.js';
-import { stopScanner } from './stopScanner.js';
-
-export default async function startDetecting() {
+const startDetecting = async () => {
     showBarcodeSection();
 
     const barcodeDetector = new BarcodeDetector();
