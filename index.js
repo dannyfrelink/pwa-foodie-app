@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const express = require('express');
 const compression = require('compression')
 const app = express();
-const port = 5555;
+const port = process.env.PORT || 5555;
 
 app.use(compression());
 app.use(express.static('static'));
