@@ -5,6 +5,8 @@ A product finder by scanning or searching for a barcode.
 ## 📋 Table of Contents
 
 * [Concept](https://github.com/dannyfrelink/pwa-foodie-app#-concept)
+* [Service-worker](https://github.com/dannyfrelink/pwa-foodie-app#-service-worker)
+* [Critical-Render-Path](https://github.com/dannyfrelink/pwa-foodie-app#-critical-render-path)
 * [Wishlist](https://github.com/dannyfrelink/pwa-foodie-app#-wishlist)
 * [Installation](https://github.com/dannyfrelink/pwa-foodie-app#-installation)
 * [License](https://github.com/dannyfrelink/pwa-foodie-app#-license)
@@ -25,6 +27,30 @@ Error/Search page          |  Offline page
 
 _Activity Diagram_
 ![Activity Diagram](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/activity-diagram.jpg)
+
+## Service-worker
+
+To cache my files into the browser, I implemented a service-worker to my project. In this service-worker I decided to cache an offline page, my CSS en Client-side JS. Therefore, when the network is down, the user is redirected to the offline page.
+
+I also decided to cache some HTML pages when the user has searched them. I cached the home page and the product pages they searched. My idea was to display the earlier searched products on the offline page. As descriped on the wishlist, there was to little time left to make this happen. To make the website work faster, I decided to display the cached pages at first. If the page is not cached already, I add this page to the cache as well.
+
+## Critical-Render-Path
+
+For my optimalisation I started off with adding compression. I installed the npm package 'compression'. Then I added a caching header to my server side JS as well. Both of them are implementen with an `app.use`.
+
+I also added responsive images to my project by using `srcset`. You can find my code down below:
+```html
+<img 
+    src=<%=product.image_url %>
+    srcset="
+        <%= product.image_url %> 400w, 
+        <%= product.image_small_url %> 200w, 
+        <%= product.image_thumb_url %> 100w
+    "
+    alt="Product image"
+>
+```
+I also tested my website thoroughly with Lighthouse and decided to improve my performance. I did this by adding some widths and heights to my elements.
 
 ## 📝 Wishlist
 
