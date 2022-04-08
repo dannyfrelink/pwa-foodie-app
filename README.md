@@ -23,6 +23,7 @@ Error/Search page          |  Offline page
 :-------------------------:|:-------------------------:
 ![Error/Search page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/search1.png)  |  ![Offline page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/offline.png)
 
+_Activity Diagram_
 ![Activity Diagram](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/activity-diagram.jpg)
 
 ## 📝 Wishlist
