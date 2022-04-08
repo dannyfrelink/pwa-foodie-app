@@ -23,6 +23,8 @@ Error/Search page          |  Offline page
 :-------------------------:|:-------------------------:
 ![Error/Search page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/search1.png)  |  ![Offline page](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/offline.png)
 
+![Activity Diagram](https://github.com/dannyfrelink/pwa-foodie-app/blob/main/images_readme/activity-diagram.png)
+
 ## 📝 Wishlist
 
 Since, there was a really short period to work on this project, there are a couple things I would've liked to add. First, my idea was to save the searched products in the cache of the browser. When searching offline, I wanted to give the user the opportunity to browse through the cached products. Sadly, there was little time to complete this. Secondly, I wanted to create a propper empty state with a save function for products. This also would have taken to much time, so sadly I wasn't able to complete this.
